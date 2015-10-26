@@ -30,8 +30,10 @@
     }
 
     CLToken *otherObject = (CLToken *)object;
+    BOOL areContextsNil = !otherObject.context && !self.context;
+    
     if ([otherObject.displayText isEqualToString:self.displayText] &&
-        [otherObject.context isEqual:self.context]) {
+        ([otherObject.context isEqual:self.context] || areContextsNil)) {
         return YES;
     }
     return NO;

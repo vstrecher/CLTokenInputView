@@ -112,6 +112,12 @@ static CGFloat const FIELD_MARGIN_X = 4.0; // Note: Same as CLTokenView.PADDING_
     if ([self.tokens containsObject:token]) {
         return;
     }
+    
+    for (CLToken *selfToken in self.tokens) {
+        if ([selfToken isEqual:token]) {
+            return;
+        }
+    }
 
     [self.tokens addObject:token];
     CLTokenView *tokenView = [[CLTokenView alloc] initWithToken:token font:self.textField.font];
