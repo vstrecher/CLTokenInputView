@@ -471,6 +471,24 @@ static CGFloat const FIELD_MARGIN_X = 4.0; // Note: Same as CLTokenView.PADDING_
 
 #pragma mark - (Optional Views)
 
+- (void)setTextFieldFont:(UIFont *)textFieldFont {
+    if (!textFieldFont) {
+        return;
+    }
+    
+    _textFieldFont = textFieldFont;
+    self.textField.font = _textFieldFont;
+}
+
+- (void)setLeftLabelFont:(UIFont *)leftLabelFont {
+    if (!leftLabelFont) {
+        return;
+    }
+    
+    _leftLabelFont = leftLabelFont;
+    self.fieldLabel.font = _leftLabelFont;
+}
+
 - (void)setFieldName:(NSString *)fieldName
 {
     if (_fieldName == fieldName) {
