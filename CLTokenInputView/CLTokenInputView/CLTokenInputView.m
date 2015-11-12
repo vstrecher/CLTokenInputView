@@ -46,6 +46,9 @@ static CGFloat const FIELD_MARGIN_X = 4.0; // Note: Same as CLTokenView.PADDING_
     self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
     self.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     self.textField.delegate = self;
+    if (self.textFieldFont) {
+        self.textField.font = self.textFieldFont;
+    }
     self.additionalTextFieldYOffset = 0.0;
     if (![self.textField respondsToSelector:@selector(defaultTextAttributes)]) {
         self.additionalTextFieldYOffset = 1.5;

@@ -50,6 +50,7 @@
     [infoButton addTarget:self action:@selector(onFieldInfoButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     self.tokenInputView.fieldName = @"To:";
     self.tokenInputView.fieldView = infoButton;
+    self.tokenInputView.textFieldFont = [UIFont systemFontOfSize:22.0];
     self.tokenInputView.placeholderText = @"Enter a name";
     self.tokenInputView.accessoryView = [self contactAddButton];
     self.tokenInputView.drawBottomBorder = YES;
